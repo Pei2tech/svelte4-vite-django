@@ -4,10 +4,9 @@ A simple template for Django + Svelte + Vite + Tailwindcss.
 It supports HMR for debug mode.  
 
 **Note:**   
-    1. If you are new to use restful api in the Django, you should try the [Django Ninja](https://django-ninja.rest-framework.com).    
-    2. To use Svelte 5 and Django together, the recommended installation method is via the command line, as described below.    
-    3. If you want to use router, [svelte-micro](https://github.com/ayndqy/svelte-micro) (Svelte 3, 4) could be a good options. Alternatively, you can also refer [Is there a router?](https://svelte.dev/docs/faq#is-there-a-router) or search from [github](https://github.com/search) for other choices.  
-    4. If using git clone for installation, the client-side router [svelte-micro](https://github.com/ayndqy/svelte-micro) and some sample code have been added to the template.   
+    1. If you are new to use restful api in the Django, you should try the [Django Ninja](https://django-ninja.rest-framework.com).      
+    2. If you want to use router, [svelte-micro](https://github.com/ayndqy/svelte-micro) (Svelte 3, 4) could be a good options. Alternatively, you can also refer [Is there a router?](https://svelte.dev/docs/faq#is-there-a-router) or search from [github](https://github.com/search) for other choices.   
+    3. If using git clone for installation, the client-side router [svelte-micro](https://github.com/ayndqy/svelte-micro) and some sample code have been added to the template.   
     
    
 Installation 
@@ -58,8 +57,28 @@ Go into the directory of projectname and then add tailwindcss for svelte
 $cd projectname
 $npx svelte-add@tailwindcss
 $npm install -D postcss autoprefixer
-
 ```
+
+Add a file named app.postcss as description below
+```
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;`
+```
+
+Modify the import file from app,css to app.postcss in the file named main.js.  
+```
+import "./app.postcss";
+import App from "./App.svelte";
+
+const app = new App({
+  target: document.getElementById("app"),
+});
+
+export default app;
+```
+
 Install the node dependencies 
 ```  
 $npm install 
