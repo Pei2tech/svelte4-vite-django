@@ -45,18 +45,19 @@ with npm
 $npm install    
 ```  
 
-## Install it by command line (Svelte 5)
+## Install it by command line (Svelte 4)
 
 Before installing it, please download **mvindex.py** from this repository. 
 
 install vite with svelte
 ```
-$npm create vite@latest projectname -- --template svelte
+$npm create vite@4 projectname -- --template svelte
 ```
 Go into the directory of projectname and then add tailwindcss for svelte
 ```  
 $cd projectname
-$npx sv add tailwindcss
+$npx svelte-add@tailwindcss
+$npm install -D postcss autoprefixer
 
 ```
 Install the node dependencies 
@@ -109,38 +110,11 @@ STATIC_ROOT = 'staticfiles'
 
 ```
 
-If anything is done, please copy the mvindex,py from this repository to the root of your project, and then modify the vite.config.js as described below. Note:you may also modify the outDir as the project name of django is not "mysite". 
+If anything is done, please copy the mvindex,py and vite.config.js from this repository to the root of your project, and then modify outDir in the vite.config.js as the project name of django is not "mysite". 
 
 ```
-import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
-import path from "path";
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-
-const _filename = fileURLToPath(import.meta.url);
-const _dirname = dirname(_filename);
-
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [svelte(), tailwindcss()],
-  build: {
-    // below for main.js
     outDir: path.join(_dirname, "mysite/statics/assets"),
-    rollupOptions: {
-      output: {
-        entryFileNames: `[name].js`,
-        chunkFileNames: `[name].js`,
-        assetFileNames: `[name].[ext]`,
-      },
-      input: path.resolve(_dirname, "src", "main.js"),
-      // external: [
-      // ],
-    },
-  },
-})
-
+ 
 ```
 
 We use the del-cli dependence to clear the directory, so you may install it first. 
