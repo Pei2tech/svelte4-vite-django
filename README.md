@@ -18,7 +18,7 @@ You can install it by git clone (router included) or command line(step by step).
 **Clone this repository and go into the directory**
 
 ```
-$ git clone  https://github.com/Pei2tech/svelte4django.git projectname
+$ git clone  https://github.com/Pei2tech/svelte4-vite-django.git projectname
 $ cd projectname 
 ```
 
