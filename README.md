@@ -22,14 +22,8 @@ $ git clone  https://github.com/Pei2tech/svelte4django.git projectname
 $ cd projectname 
 ```
 
-This template uses [poetry](https://python-poetry.org/ "poetry") to manage python packages. However, you can just install django by pip as you don't use poetry.    
 
-```
-poetry shell
-poetry install
-```  
-or   
-```   
+``` 
 $ pip install django   
 ```   
 
