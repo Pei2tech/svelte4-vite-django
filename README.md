@@ -87,7 +87,7 @@ Add a file named app.postcss as description below
 /* Write your global styles here, in PostCSS syntax */
 @tailwind base;
 @tailwind components;
-@tailwind utilities;`
+@tailwind utilities;
 ```
 
 Modify the import file from app,css to app.postcss in the file named main.js.  
