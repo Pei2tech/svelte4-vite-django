@@ -46,12 +46,41 @@ install vite with svelte
 ```
 $npm create vite@4 projectname -- --template svelte
 ```
-Go into the directory of projectname and then add tailwindcss for svelte
-```  
-$cd projectname
-$npx svelte-add@tailwindcss
-$npm install -D postcss autoprefixer
+
+
+Go into the directory of projectname and upgrade svelte and vite to support final svelte 4
 ```
+$npm install -D svelte@4
+$npm install -D vite@4
+```
+
+add tailwindcss for svelte
+```
+$cd projectname
+$npm install -D tailwindcss@3 postcss autoprefixer
+$npx tailwindcss init -p
+```
+
+Configure tailwind.config.js
+
+```
+/** @type {import('tailwindcss').Config}*/
+const config = {
+  mode: "jit",
+  content: ["./src/**/*.{html,js,svelte,ts}"],
+
+  theme: {
+    extend: {},
+  },
+
+  plugins: [],
+};
+
+module.exports = config;
+
+```
+
+
 
 Add a file named app.postcss as description below
 ```
