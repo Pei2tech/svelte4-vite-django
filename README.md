@@ -50,13 +50,13 @@ $npm create vite@4 projectname -- --template svelte
 
 Go into the directory of projectname and upgrade svelte and vite to support final svelte 4
 ```
+$cd projectname
 $npm install -D svelte@4
 $npm install -D vite@4
 ```
 
 add tailwindcss for svelte
 ```
-$cd projectname
 $npm install -D tailwindcss@3 postcss autoprefixer
 $npx tailwindcss init -p
 ```
