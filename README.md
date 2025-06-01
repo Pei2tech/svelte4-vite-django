@@ -1,6 +1,6 @@
 Introduction  
 ===========  
-A simple template for Django + Svelte + Vite + Tailwindcss.   
+A simple template for Django + Svelte 4 + Vite + Tailwindcss.   
 It supports HMR for debug mode.  
 
 **Note:**   

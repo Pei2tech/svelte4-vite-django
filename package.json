@@ -1,0 +1,26 @@
+{
+  "name": "svelte4-vite-django",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "delete": "del --force mysite/statics/assets",
+    "dev": "vite",
+    "build": "npm run delete && vite build && npm run move",
+    "move": "python mvindex.py",
+    "serve": "vite preview",
+    "watch": "python mvindex.py debug & vite build --watch "
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.4.2",
+    "autoprefixer": "^10.4.21",
+    "del-cli": "^6.0.0",
+    "postcss": "^8.5.4",
+    "svelte": "^4.2.20",
+    "tailwindcss": "^3.4.17",
+    "vite": "^4.5.14"
+  },
+  "dependencies": {
+    "svelte-micro": "^2.5.7"
+  }
+}
